@@ -17,18 +17,25 @@ const sepiaDivider = (
 
 function SectionLabel({ text }: { text: string }) {
   return (
-    <p
-      style={{
-        fontFamily: 'Marcellus, serif',
-        color: '#8b6f47',
-        textTransform: 'uppercase',
-        letterSpacing: '0.25rem',
-        fontSize: '0.62rem',
-        margin: '0 0 0.75rem 0',
-      }}
-    >
-      {text}
-    </p>
+    <div style={{ marginBottom: '0.75rem' }}>
+      <div style={{
+        height: '1px',
+        background: 'linear-gradient(to right, transparent, #7a5c3a, transparent)',
+        marginBottom: '0.5rem',
+      }} />
+      <p
+        style={{
+          fontFamily: 'Marcellus, serif',
+          color: '#8b6f47',
+          textTransform: 'uppercase',
+          letterSpacing: '0.25rem',
+          fontSize: '0.62rem',
+          margin: 0,
+        }}
+      >
+        {text}
+      </p>
+    </div>
   )
 }
 
@@ -41,7 +48,7 @@ interface Article {
 
 function LeadArticle({ kicker, title, byline, body }: Article) {
   return (
-    <div style={{ borderBottom: '1px solid #ede0c0', paddingBottom: '1rem', marginBottom: '1rem' }}>
+    <div style={{ paddingBottom: '1rem' }}>
       <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', textTransform: 'uppercase', fontSize: '0.72rem', margin: '0 0 0.3rem 0' }}>
         {kicker}
       </p>
@@ -61,16 +68,16 @@ function LeadArticle({ kicker, title, byline, body }: Article) {
 function MidArticle({ kicker, title, byline, body }: Article) {
   return (
     <div style={{ borderLeft: '2px solid #ede0c0', paddingLeft: '0.75rem' }}>
-      <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', textTransform: 'uppercase', fontSize: '0.72rem', margin: '0 0 0.3rem 0' }}>
+      <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', textTransform: 'uppercase', fontSize: '0.68rem', margin: '0 0 0.3rem 0' }}>
         {kicker}
       </p>
-      <h2 style={{ fontFamily: 'Marcellus, serif', color: '#1a1008', fontSize: 'clamp(1rem, 3vw, 1.3rem)', margin: '0 0 0.3rem 0', lineHeight: 1.2 }}>
+      <h2 style={{ fontFamily: 'Marcellus, serif', color: '#1a1008', fontSize: 'clamp(0.9rem, 2.5vw, 1.15rem)', margin: '0 0 0.3rem 0', lineHeight: 1.2 }}>
         {title}
       </h2>
-      <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', fontSize: '0.7rem', margin: '0 0 0.5rem 0' }}>
+      <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', fontSize: '0.65rem', margin: '0 0 0.5rem 0' }}>
         {byline}
       </p>
-      <p style={{ fontFamily: 'DM Serif Display, serif', color: '#3d2b1a', fontSize: '0.9rem', lineHeight: 1.75, margin: 0 }}>
+      <p style={{ fontFamily: 'DM Serif Display, serif', color: '#3d2b1a', fontSize: '0.82rem', lineHeight: 1.7, margin: 0 }}>
         {body}
       </p>
     </div>
@@ -84,16 +91,16 @@ function LowArticle({ kicker, title, byline, body, numeral }: Article & { numera
         {numeral}
       </span>
       <div>
-        <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', textTransform: 'uppercase', fontSize: '0.72rem', margin: '0 0 0.25rem 0' }}>
+        <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', textTransform: 'uppercase', fontSize: '0.65rem', margin: '0 0 0.25rem 0' }}>
           {kicker}
         </p>
-        <h2 style={{ fontFamily: 'Marcellus, serif', color: '#1a1008', fontSize: '1rem', margin: '0 0 0.25rem 0', lineHeight: 1.2 }}>
+        <h2 style={{ fontFamily: 'Marcellus, serif', color: '#1a1008', fontSize: '0.9rem', margin: '0 0 0.25rem 0', lineHeight: 1.2 }}>
           {title}
         </h2>
-        <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', fontSize: '0.7rem', margin: '0 0 0.5rem 0' }}>
+        <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', fontSize: '0.65rem', margin: '0 0 0.5rem 0' }}>
           {byline}
         </p>
-        <p style={{ fontFamily: 'DM Serif Display, serif', color: '#3d2b1a', fontSize: '0.9rem', lineHeight: 1.75, margin: 0 }}>
+        <p style={{ fontFamily: 'DM Serif Display, serif', color: '#3d2b1a', fontSize: '0.82rem', lineHeight: 1.7, margin: 0 }}>
           {body}
         </p>
       </div>
@@ -103,10 +110,38 @@ function LowArticle({ kicker, title, byline, body, numeral }: Article & { numera
 
 export default function Home() {
   const [editionOpen, setEditionOpen] = useState(false)
+  const [coverFolding, setCoverFolding] = useState(false)
+  const [coverGone, setCoverGone] = useState(false)
+
+  function handleOpen() {
+    setCoverFolding(true)
+    setTimeout(() => {
+      setCoverGone(true)
+      setEditionOpen(true)
+    }, 800)
+  }
 
   return (
-    <div style={{ backgroundColor: '#f5eed8', minHeight: '100vh' }}>
-      {!editionOpen && <CoverPage onOpen={() => setEditionOpen(true)} />}
+    <div style={{ backgroundColor: '#f5eed8', minHeight: '100vh', perspective: '1200px' }}>
+      {!coverGone && (
+        <div
+          style={{
+            position: coverFolding ? 'fixed' : 'relative',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            transformOrigin: 'left center',
+            transform: coverFolding ? 'rotateY(-20deg)' : 'rotateY(0deg)',
+            opacity: coverFolding ? 0 : 1,
+            transition: 'transform 800ms ease-in-out, opacity 800ms ease-in-out',
+            zIndex: 10,
+            backfaceVisibility: 'hidden',
+          }}
+        >
+          <CoverPage onOpen={handleOpen} />
+        </div>
+      )}
 
       <PageTurn visible={editionOpen}>
         <Masthead />
@@ -120,7 +155,17 @@ export default function Home() {
             body="For years the drumbeat of uncertainty has set the pace of daily life. Yet this morning brings with it a stillness that is not absence but arrival. Diplomats have gathered. Words, carefully chosen, have been spoken. Whether they will hold is a question only time may answer, but for now the air carries something resembling hope."
           />
 
-          {sepiaDivider}
+          <div style={{ borderBottom: '2px solid #1a1008', marginBottom: 0 }} />
+          <p style={{
+            fontFamily: 'IM Fell English, serif',
+            fontStyle: 'italic',
+            color: '#8b6f47',
+            fontSize: '0.65rem',
+            textAlign: 'center',
+            margin: '0 0 1rem 0',
+          }}>
+            - fold -
+          </p>
 
           <SectionLabel text="Below the Fold - Second Tier Dispatches" />
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -138,7 +183,7 @@ export default function Home() {
             />
           </div>
 
-          {sepiaDivider}
+          <div style={{ borderTop: '1px dashed #8b6f47', margin: '1rem 0' }} />
 
           <SectionLabel text="Deep Section - Lower Correspondence" />
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '1.5rem' }}>
@@ -165,13 +210,11 @@ export default function Home() {
             />
           </div>
 
-          {sepiaDivider}
-
           <div
             style={{
               borderTop: '2px solid #1a1008',
               textAlign: 'center',
-              paddingTop: '0.75rem',
+              padding: '1.25rem 0 1rem',
               fontFamily: 'IM Fell English, serif',
               color: '#8b6f47',
               fontStyle: 'italic',
