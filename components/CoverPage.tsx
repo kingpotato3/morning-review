@@ -89,7 +89,7 @@ export default function CoverPage({ onOpen }: CoverPageProps) {
             margin: 0,
           }}
         >
-          Est. MMXXVI - Romantic Victorian Edition
+          Est. MMXXVI
         </p>
 
         {gradientRule}
@@ -105,7 +105,7 @@ export default function CoverPage({ onOpen }: CoverPageProps) {
             margin: '0 auto',
           }}
         >
-          Read not to contradict and confute, nor to believe and take for granted, but to weigh and consider.
+          Friends, Romans, countrymen, lend me your ears.
         </p>
 
         {gradientRule}
