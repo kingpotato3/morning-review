@@ -1,8 +1,8 @@
 function getGreeting(): string {
   const hour = new Date().getHours()
-  if (hour < 12) return 'Good Morning'
-  if (hour < 17) return 'Good Afternoon'
-  return 'Good Evening'
+  if (hour < 12) return 'Good Morning, Reid'
+  if (hour < 17) return 'Good Afternoon, Reid'
+  return 'Good Evening, Reid'
 }
 
 interface CoverPageProps {
@@ -24,13 +24,9 @@ export default function CoverPage({ onOpen }: CoverPageProps) {
     <div
       onClick={onOpen}
       style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
         backgroundColor: '#f5eed8',
+        height: '100vh',
+        overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -38,6 +34,7 @@ export default function CoverPage({ onOpen }: CoverPageProps) {
         cursor: 'pointer',
         padding: '3rem 2rem',
         boxSizing: 'border-box',
+        position: 'relative',
       }}
     >
       <div style={{ width: '100%', maxWidth: '400px', textAlign: 'center' }}>
@@ -59,6 +56,7 @@ export default function CoverPage({ onOpen }: CoverPageProps) {
           style={{
             fontFamily: 'Marcellus, serif',
             color: '#8b6f47',
+            textTransform: 'uppercase',
             letterSpacing: '0.15em',
             fontSize: '0.85rem',
             margin: '0 0 0.5rem 0',
@@ -117,6 +115,7 @@ export default function CoverPage({ onOpen }: CoverPageProps) {
           style={{
             fontFamily: 'Marcellus, serif',
             color: '#8b6f47',
+            textTransform: 'uppercase',
             letterSpacing: '0.2em',
             fontSize: '0.72rem',
             margin: 0,
