@@ -147,7 +147,7 @@ export default function Home() {
             </div>
             <div style={{ flexShrink: 0, textAlign: 'center', width: '220px' }}>
               <img
-                src="/cat.jpg"
+                src="https://i.imgur.com/uLwSuX7.jpeg"
                 alt="The Watsonian Museum of Natural Science"
                 style={{
                   width: '100%',
