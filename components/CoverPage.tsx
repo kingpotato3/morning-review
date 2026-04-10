@@ -24,9 +24,13 @@ export default function CoverPage({ onOpen }: CoverPageProps) {
     <div
       onClick={onOpen}
       style={{
-        backgroundColor: '#f5eed8',
-        height: '100vh',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
         overflow: 'hidden',
+        backgroundColor: '#f5eed8',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -34,7 +38,6 @@ export default function CoverPage({ onOpen }: CoverPageProps) {
         cursor: 'pointer',
         padding: '3rem 2rem',
         boxSizing: 'border-box',
-        position: 'relative',
       }}
     >
       <div style={{ width: '100%', maxWidth: '400px', textAlign: 'center' }}>
