@@ -68,7 +68,7 @@ export default function Masthead() {
         }}
       >
         <p style={{ fontFamily: 'IM Fell English, serif', fontStyle: 'italic', fontSize: '0.7rem', color: '#3d2b1a', margin: 0 }}>{new Date().toLocaleString('en-GB', { weekday: 'long' })} Edition - Volume I</p>
-        <p style={{ fontFamily: 'IM Fell English, serif', fontStyle: 'italic', fontSize: '0.7rem', color: '#3d2b1a', margin: 0 }}>Beaumont, Texas</p>
+        <p style={{ fontFamily: 'IM Fell English, serif', fontStyle: 'italic', fontSize: '0.7rem', color: '#3d2b1a', margin: 0 }}>The Golden Triangle, United States</p>
         <p style={{ fontFamily: 'IM Fell English, serif', fontStyle: 'italic', fontSize: '0.7rem', color: '#3d2b1a', margin: 0 }}>Est. MMXXVI</p>
       </div>
     </header>

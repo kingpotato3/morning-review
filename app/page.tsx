@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import CoverPage from '../components/CoverPage'
 import PageTurn from '../components/PageTurn'
 import Masthead from '../components/Masthead'
@@ -88,6 +88,19 @@ export default function Home() {
   const [editionOpen, setEditionOpen] = useState(false)
   const [coverFolding, setCoverFolding] = useState(false)
   const [coverGone, setCoverGone] = useState(false)
+  const [weather, setWeather] = useState<string | null>(null)
+
+  useEffect(() => {
+    fetch('https://wttr.in/Beaumont,Texas?format=j1')
+      .then(r => r.json())
+      .then(data => {
+        const temp = data.current_condition[0].temp_F
+        const desc = data.current_condition[0].weatherDesc[0].value.toLowerCase()
+        const feels = data.current_condition[0].FeelsLikeF
+        setWeather(`The instruments report ${temp}°F and ${desc} across the region, with conditions feeling closer to ${feels}°F to those abroad in the open air. Those with business outdoors are advised to dress accordingly and proceed with their ordinary plans.`)
+      })
+      .catch(() => setWeather('Conditions remain favorable across the region. Those with business in the open air are advised to proceed with their ordinary plans and to carry no unnecessary burdens.'))
+  }, [])
 
   function handleOpen() {
     setCoverFolding(true)
@@ -130,6 +143,30 @@ export default function Home() {
             body="The Morning Review is a personalised daily newspaper — a single, finite edition delivered each morning, written in the voice of a Victorian broadsheet but populated with the things that actually matter to you. Real news, current weather, your calendar, your own writing, things you are tracking. It is built on the belief that the morning deserves intention, and that the best way to start a day is to sit down with something that was made for you specifically."
           />
 
+          <div style={{ textAlign: 'center', margin: '1rem 0' }}>
+            <img
+              src="/cat.jpg"
+              alt="The Household Correspondent"
+              style={{
+                maxWidth: '280px',
+                width: '100%',
+                filter: 'sepia(40%) contrast(1.05)',
+                border: '1px solid #8b6f47',
+                padding: '6px',
+                backgroundColor: '#faf4e6',
+              }}
+            />
+            <p style={{
+              fontFamily: 'IM Fell English, serif',
+              fontStyle: 'italic',
+              color: '#8b6f47',
+              fontSize: '0.65rem',
+              marginTop: '0.4rem',
+            }}>
+              The Watsonian Museum of Natural Science, our Chief Correspondent, depicted here in a moment of editorial contemplation.
+            </p>
+          </div>
+
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <MidArticle
               kicker="On the Matter of Creativity"
@@ -166,7 +203,7 @@ export default function Home() {
               kicker="From the Weather Desk"
               title="Fair Skies Expected Through the Fortnight"
               byline="From the Observatory"
-              body="Conditions remain favorable across the region. Those with business in the open air are advised to proceed with their ordinary plans and to carry no unnecessary burdens."
+              body={weather ?? 'Consulting the instruments...'}
             />
           </div>
 

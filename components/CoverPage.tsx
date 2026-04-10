@@ -1,3 +1,10 @@
+function getGreeting(): string {
+  const hour = new Date().getHours()
+  if (hour < 12) return 'Good Morning, Reid'
+  if (hour < 17) return 'Good Afternoon, Reid'
+  return 'Good Evening, Reid'
+}
+
 interface CoverPageProps {
   onOpen: () => void
 }
@@ -54,7 +61,7 @@ export default function CoverPage({ onOpen }: CoverPageProps) {
             margin: '0 0 0.5rem 0',
           }}
         >
-          Good Morning, Reid
+          {getGreeting()}
         </p>
 
         <h1
