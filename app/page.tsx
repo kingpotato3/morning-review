@@ -136,35 +136,37 @@ export default function Home() {
         <Masthead />
 
         <div style={{ padding: '1.5rem 2rem' }}>
-          <LeadArticle
-            kicker="On This Publication"
-            title="What The Morning Review Is, & What It Intends to Become"
-            byline="By the Editor"
-            body="The Morning Review is a personalised daily newspaper — a single, finite edition delivered each morning, written in the voice of a Victorian broadsheet but populated with the things that actually matter to you. Real news, current weather, your calendar, your own writing, things you are tracking. It is built on the belief that the morning deserves intention, and that the best way to start a day is to sit down with something that was made for you specifically."
-          />
-
-          <div style={{ textAlign: 'center', margin: '1rem 0' }}>
-            <img
-              src="/cat.jpg"
-              alt="The Household Correspondent"
-              style={{
-                maxWidth: '280px',
-                width: '100%',
-                filter: 'sepia(40%) contrast(1.05)',
-                border: '1px solid #8b6f47',
-                padding: '6px',
-                backgroundColor: '#faf4e6',
-              }}
-            />
-            <p style={{
-              fontFamily: 'IM Fell English, serif',
-              fontStyle: 'italic',
-              color: '#8b6f47',
-              fontSize: '0.65rem',
-              marginTop: '0.4rem',
-            }}>
-              The Watsonian Museum of Natural Science, our Chief Correspondent, depicted here in a moment of editorial contemplation.
-            </p>
+          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start', paddingBottom: '1rem' }}>
+            <div style={{ flex: 1 }}>
+              <LeadArticle
+                kicker="On This Publication"
+                title="What The Morning Review Is, & What It Intends to Become"
+                byline="By the Editor"
+                body="The Morning Review is a personalised daily newspaper — a single, finite edition assembled each morning from the sources you have chosen and arranged by your own hand. Real news, curated newsletters, current weather, your own writing, things you are tracking. It is tiered by importance: the dispatches that demand your attention arrive above the fold, the context below it, and the correspondence at the close. There is no algorithm deciding what you see. There is no infinite scroll pulling you further than you intended to go. The press runs once, on your schedule, quietly. When you reach the final line, you have finished the paper. That is the entire design."
+              />
+            </div>
+            <div style={{ flexShrink: 0, textAlign: 'center', width: '220px' }}>
+              <img
+                src="/cat.jpg"
+                alt="The Watsonian Museum of Natural Science"
+                style={{
+                  width: '100%',
+                  filter: 'sepia(40%) contrast(1.05)',
+                  border: '1px solid #8b6f47',
+                  padding: '6px',
+                  backgroundColor: '#faf4e6',
+                }}
+              />
+              <p style={{
+                fontFamily: 'IM Fell English, serif',
+                fontStyle: 'italic',
+                color: '#8b6f47',
+                fontSize: '0.65rem',
+                marginTop: '0.4rem',
+              }}>
+                The Watsonian Museum of Natural Science, our Chief Correspondent, depicted here in a moment of editorial contemplation.
+              </p>
+            </div>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
