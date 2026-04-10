@@ -101,7 +101,7 @@ export default function Home() {
   }
 
   return (
-    <div style={{ backgroundColor: '#f5eed8', minHeight: '100vh', perspective: '1200px' }}>
+    <div style={{ backgroundColor: '#f5eed8', minHeight: '100vh', perspective: '1200px', overflow: coverGone ? 'visible' : 'hidden', height: coverGone ? 'auto' : '100vh' }}>
       {!coverGone && (
         <div
           style={{

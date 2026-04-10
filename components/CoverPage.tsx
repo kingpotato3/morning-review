@@ -24,14 +24,9 @@ export default function CoverPage({ onOpen }: CoverPageProps) {
     <div
       onClick={onOpen}
       style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
-        zIndex: 50,
         backgroundColor: '#f5eed8',
+        height: '100vh',
+        overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
