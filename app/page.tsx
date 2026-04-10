@@ -5,16 +5,6 @@ import CoverPage from '../components/CoverPage'
 import PageTurn from '../components/PageTurn'
 import Masthead from '../components/Masthead'
 
-const sepiaDivider = (
-  <div
-    style={{
-      height: '1px',
-      background: 'linear-gradient(to right, transparent, #7a5c3a, transparent)',
-      margin: '1rem 0',
-    }}
-  />
-)
-
 interface Article {
   kicker: string
   title: string
@@ -25,7 +15,7 @@ interface Article {
 function LeadArticle({ kicker, title, byline, body }: Article) {
   return (
     <div style={{ paddingBottom: '1rem' }}>
-      <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', textTransform: 'uppercase', fontSize: '0.72rem', margin: '0 0 0.3rem 0' }}>
+      <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', fontWeight: 'bold', fontSize: '0.72rem', margin: '0 0 0.3rem 0' }}>
         {kicker}
       </p>
       <h2 style={{ fontFamily: 'Marcellus, serif', color: '#1a1008', fontSize: 'clamp(1.3rem, 4vw, 1.8rem)', margin: '0 0 0.3rem 0', lineHeight: 1.2 }}>
@@ -44,7 +34,7 @@ function LeadArticle({ kicker, title, byline, body }: Article) {
 function MidArticle({ kicker, title, byline, body }: Article) {
   return (
     <div style={{ borderLeft: '2px solid #ede0c0', paddingLeft: '0.75rem' }}>
-      <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', textTransform: 'uppercase', fontSize: '0.68rem', margin: '0 0 0.3rem 0' }}>
+      <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', fontWeight: 'bold', fontSize: '0.68rem', margin: '0 0 0.3rem 0' }}>
         {kicker}
       </p>
       <h2 style={{ fontFamily: 'Marcellus, serif', color: '#1a1008', fontSize: 'clamp(0.9rem, 2.5vw, 1.15rem)', margin: '0 0 0.3rem 0', lineHeight: 1.2 }}>
@@ -67,7 +57,7 @@ function LowArticle({ kicker, title, byline, body, numeral }: Article & { numera
         {numeral}
       </span>
       <div>
-        <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', textTransform: 'uppercase', fontSize: '0.65rem', margin: '0 0 0.25rem 0' }}>
+        <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', fontWeight: 'bold', fontSize: '0.65rem', margin: '0 0 0.25rem 0' }}>
           {kicker}
         </p>
         <h2 style={{ fontFamily: 'Marcellus, serif', color: '#1a1008', fontSize: '0.9rem', margin: '0 0 0.25rem 0', lineHeight: 1.2 }}>
@@ -142,7 +132,7 @@ export default function Home() {
                 kicker="On This Publication"
                 title="What The Morning Review Is, & What It Intends to Become"
                 byline="By the Editor"
-                body="The Morning Review is a personalised daily newspaper — a single, finite edition assembled each morning from the sources you have chosen and arranged by your own hand. Real news, curated newsletters, current weather, your own writing, things you are tracking. It is tiered by importance: the dispatches that demand your attention arrive above the fold, the context below it, and the correspondence at the close. There is no algorithm deciding what you see. There is no infinite scroll pulling you further than you intended to go. The press runs once, on your schedule, quietly. When you reach the final line, you have finished the paper. That is the entire design."
+                body="The Morning Review started as an inbox problem. You know the one: subscriptions you meant to read, newsletters you love in theory, news you should probably know about, all of it piling up in a place designed to make everything feel equally urgent. It is never equally urgent. It is rarely urgent at all. So here is the idea: you sync your email, your newsletters get pulled in and arranged by what actually matters to you, and you sit down with your paper. A real one, with a beginning and an end. No algorithm. No infinite scroll dragging you further than you meant to go. Just the things you chose, in the order that makes sense, wrapped in something that feels worth the fifteen minutes you are giving it. It started as a way to organise an inbox. It became a tool of intention. Come in, read your paper, and go live your life. You have much better things to do."
               />
             </div>
             <div style={{ flexShrink: 0, textAlign: 'center', width: '220px' }}>
