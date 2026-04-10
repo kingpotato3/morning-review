@@ -24,7 +24,7 @@ function LeadArticle({ kicker, title, byline, body }: Article) {
       <p style={{ fontFamily: 'IM Fell English, serif', color: '#8b6f47', fontStyle: 'italic', fontSize: '0.7rem', margin: '0 0 0.75rem 0' }}>
         {byline}
       </p>
-      <p style={{ fontFamily: 'DM Serif Display, serif', color: '#3d2b1a', fontSize: '0.9rem', lineHeight: 1.75, margin: 0 }}>
+      <p style={{ fontFamily: 'DM Serif Display, serif', color: '#3d2b1a', fontSize: '1.1rem', lineHeight: 1.75, margin: 0 }}>
         {body}
       </p>
     </div>
@@ -126,7 +126,7 @@ export default function Home() {
         <Masthead />
 
         <div style={{ padding: '1.5rem 2rem' }}>
-          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start', paddingBottom: '1rem' }}>
+          <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'flex-start', paddingBottom: '1rem' }}>
             <div style={{ flex: 1 }}>
               <LeadArticle
                 kicker="On This Publication"
@@ -170,7 +170,7 @@ export default function Home() {
               kicker="Correspondent's Profile"
               title="On the Editor Herself, Her Habits & Preoccupations"
               byline="From Our Staff"
-              body="Reid Babino is a writer, operator, and builder based in Beaumont, Texas. She has completed a novel and a collection of poetry, both presently moving through the publishing process. When she is not running events at an art museum or building applications at odd hours of the night, she is designing worlds for other people to inhabit — as a dungeon master, a narrative designer, and a person who believes that a good story, told well, is one of the few things that has always mattered."
+              body="Reid Babino is a writer, operator, and builder based in Beaumont, Texas. She has completed a novel and a collection of poetry, both presently moving through the publishing process. When she is not running events at an art museum or building applications at odd hours of the night, she is designing worlds for other people to inhabit: as a dungeon master, a narrative designer, and a person who believes that a good story, told well, is one of the few things that has always mattered."
             />
           </div>
 
@@ -178,20 +178,13 @@ export default function Home() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '1.5rem' }}>
             <LowArticle
               numeral="I"
-              kicker="On the Craft"
-              title="A Note on the Trellis & the Plant"
-              byline="From the Editorial Office"
-              body="Artificial intelligence ought to be the trellis, not the plant — the scaffolding that lets a person grow taller and reach places they could not get to on their own. Fully generated words are not respectful of the human spirit. But helping a human spirit finish the thing it has been trying to say for years? That is worth building something around. It is personal and universal and prehistoric and inherently human."
+              kicker="On the Craft of Engagement"
+              title="Thirty-Seven Students & a World Worth Living In"
+              byline="From the Technical Desk"
+              body="It was a Tuesday and nobody was looking at me. Thirty-seven college students, thirty-seven sets of eyes pointed at anything but the front of the room. I had been teaching psychology for three weeks and I was losing. Not to bad students — they were fine — but to something larger than all of us, something prehistoric almost, the evolution of attention itself, the way the human condition keeps rewriting the terms of engagement without asking anyone's permission. So I scrapped the lesson plan and built a world. I gave them characters. I gave them a campaign with branching storylines and real consequences and things worth protecting. I told them the only way to level up was to know the psychology. Personality theory became character traits. Psychological disorders became lore. The intersection of behavior and biology became the rules of the game. The first session was chaos. The second was competitive. By the third, a girl who had not spoken once in three weeks was arguing strategy with a boy across the room like something depended on it. The need, the ideas, the visceral urge to engage: it was still there, just as loud as it had ever been. It just needed somewhere to go. I am a dungeon master by hobby and by temperament, which means I have always known this: build the right world carefully enough and people will choose to live in it."
             />
             <LowArticle
               numeral="II"
-              kicker="Dispatches & Technology"
-              title="This Application, Its Architecture & Its Intentions"
-              byline="From the Technical Desk"
-              body="The Morning Review is built in Next.js and styled entirely in the Victorian broadsheet tradition — Cormorant SC for the masthead, IM Fell English for editorial voice, DM Serif Display for body copy. It is designed to be personalised: future editions will pull from live news, weather, calendar data, and the reader's own writing. The cover page animates open on tap. The date updates itself each morning. The paper ends when you reach the bottom, and there is nothing more to scroll."
-            />
-            <LowArticle
-              numeral="III"
               kicker="From the Weather Desk"
               title="Fair Skies Expected Through the Fortnight"
               byline="From the Observatory"
